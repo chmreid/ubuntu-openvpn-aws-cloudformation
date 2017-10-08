@@ -1,6 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: OpenVPN Stack
 
+Parameters:
+  OpenVPNPort:
+    Type: Number
+    Default: 1194
+    Description: OpenVPN UDP port
+
 Mappings:
   RegionMap:
     us-east-1:
@@ -106,16 +112,12 @@ Resources:
   OpenVPNInstanceSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: SG for VPN Secrets Generator
+      GroupDescription: SG for OpenVPN Server
       VpcId: !Ref myVPC
       SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: '22'
-          ToPort: '22'
-          CidrIp: 0.0.0.0/0
         - IpProtocol: udp
-          FromPort: '1194'
-          ToPort: '1194'
+          FromPort: !Ref OpenVPNPort
+          ToPort: !Ref OpenVPNPort
           CidrIp: 0.0.0.0/0
 
   myEC2InstanceRole:
@@ -183,7 +185,6 @@ Resources:
     Properties:
       ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", AMALINUX]
       InstanceType: t2.micro
-      KeyName: OhioWinningVPN
       SourceDestCheck: false
       NetworkInterfaces:
         -
@@ -292,7 +293,7 @@ Resources:
                 client
                 dev tun
                 proto udp
-                remote ${myEIP} 1194
+                remote ${myEIP} ${OpenVPNPort}
                 ca ca.crt
                 cert clientuser.crt
                 key clientuser.key
@@ -347,7 +348,7 @@ Resources:
           files:
             /opt/openvpn/server.conf:
               content: !Sub |
-                port 1194
+                port ${OpenVPNPort}
                 proto udp
                 dev tun
                 server 172.16.0.0 255.255.252.0
