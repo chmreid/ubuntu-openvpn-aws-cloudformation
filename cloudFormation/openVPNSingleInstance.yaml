@@ -4,33 +4,33 @@ Description: OpenVPN Stack
 Mappings:
   RegionMap:
     us-east-1:
-      "AMALINUX" : "ami-7ed81e04" # Source 213965830765/Amazon Linux
+      "AMALINUX" : "ami-8c1be5f6" # Amazon Linux AMI 2017.09
     us-east-2:
-      "AMALINUX" : "ami-c5062ba0" # Source 213965830765/Amazon Linux
+      "AMALINUX" : "ami-c5062ba0" # Amazon Linux AMI 2017.09
     us-west-1:
-      "AMALINUX" : "ami-a1deeec1" # Source 213965830765/Amazon Linux
+      "AMALINUX" : "ami-02eada62" # Amazon Linux AMI 2017.09
     us-west-2:
-      "AMALINUX" : "ami-b04e92d0" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-e689729e" # Amazon Linux AMI 2017.09
     ca-central-1:
-      "AMALINUX" : "ami-eb20928f" # AMALINUX SEP 2016 v01
+      "AMALINUX" : "ami-fd55ec99" # Amazon Linux AMI 2017.09
     eu-west-1:
-      "AMALINUX" : "ami-d41d58a7" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-acd005d5" # Amazon Linux AMI 2017.09
     eu-central-1:
-      "AMALINUX" : "ami-0044b96f" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-c7ee5ca8" # Amazon Linux AMI 2017.09
     eu-west-2:
-      "AMALINUX" : "ami-bfe0eadb" # AMALINUX SEP 2016 v01
+      "AMALINUX" : "ami-1a7f6d7e" # Amazon Linux AMI 2017.09
     ap-southeast-1:
-      "AMALINUX" : "ami-7243e611" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-0797ea64" # Amazon Linux AMI 2017.09
     ap-southeast-2:
-      "AMALINUX" : "ami-55d4e436" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-8536d6e7" # Amazon Linux AMI 2017.09
     ap-northeast-2:
-      "AMALINUX" : "ami-a04297ce" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-9bec36f5" # Amazon Linux AMI 2017.09
     ap-northeast-1:
-      "AMALINUX" : "ami-1a15c77b" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-2a69be4c" # Amazon Linux AMI 2017.09
     ap-south-1:
-      "AMALINUX" : "ami-cacbbea5" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-4fc58420" # Amazon Linux AMI 2017.09
     sa-east-1:
-      "AMALINUX" : "ami-b777e4db" # AMALINUX SEP 2016
+      "AMALINUX" : "ami-f1344b9d" # Amazon Linux AMI 2017.09
 
 Resources:
   myVPC:
