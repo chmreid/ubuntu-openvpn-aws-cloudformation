@@ -5,7 +5,15 @@ Parameters:
   OpenVPNPort:
     Type: Number
     Default: 1194
-    Description: OpenVPN UDP port
+    Description: OpenVPN port
+
+  OpenVPNProtocol:
+    Type: String
+    Default: udp
+    AllowedValues:
+    - udp
+    - tcp
+    Description: OpenVPN Protocol
 
 Mappings:
   RegionMap:
@@ -117,7 +125,7 @@ Resources:
       GroupDescription: SG for OpenVPN Server
       VpcId: !Ref myVPC
       SecurityGroupIngress:
-        - IpProtocol: udp
+        - IpProtocol: !Ref OpenVPNProtocol
           FromPort: !Ref OpenVPNPort
           ToPort: !Ref OpenVPNPort
           CidrIp: 0.0.0.0/0
@@ -292,7 +300,7 @@ Resources:
               content: !Sub |
                 client
                 dev tun
-                proto udp
+                proto ${OpenVPNProtocol}
                 remote ${myEIP} ${OpenVPNPort}
                 ca ca.crt
                 cert clientuser.crt
@@ -349,7 +357,7 @@ Resources:
             /opt/openvpn/server.conf:
               content: !Sub |
                 port ${OpenVPNPort}
-                proto udp
+                proto ${OpenVPNProtocol}
                 dev tun
                 server 172.16.0.0 255.255.252.0
                 push "redirect-gateway def1"
