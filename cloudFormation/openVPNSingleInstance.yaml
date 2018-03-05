@@ -9,34 +9,36 @@ Parameters:
 
 Mappings:
   RegionMap:
-    us-east-1:
+    us-east-1: # Northern Virginia
       "AMALINUX" : "ami-8c1be5f6" # Amazon Linux AMI 2017.09
-    us-east-2:
+    us-east-2: # Ohio
       "AMALINUX" : "ami-c5062ba0" # Amazon Linux AMI 2017.09
-    us-west-1:
+    us-west-1: # Northern California
       "AMALINUX" : "ami-02eada62" # Amazon Linux AMI 2017.09
-    us-west-2:
+    us-west-2: # Oregon
       "AMALINUX" : "ami-e689729e" # Amazon Linux AMI 2017.09
-    ca-central-1:
+    ca-central-1: # Central Canada
       "AMALINUX" : "ami-fd55ec99" # Amazon Linux AMI 2017.09
-    eu-west-1:
+    eu-west-1: # Ireland
       "AMALINUX" : "ami-acd005d5" # Amazon Linux AMI 2017.09
-    eu-central-1:
+    eu-central-1: # Frankfurt
       "AMALINUX" : "ami-c7ee5ca8" # Amazon Linux AMI 2017.09
-    eu-west-2:
+    eu-west-2: # London
       "AMALINUX" : "ami-1a7f6d7e" # Amazon Linux AMI 2017.09
-    ap-southeast-1:
+    ap-southeast-1: # Singapore
       "AMALINUX" : "ami-0797ea64" # Amazon Linux AMI 2017.09
-    ap-southeast-2:
+    ap-southeast-2: # Sydney
       "AMALINUX" : "ami-8536d6e7" # Amazon Linux AMI 2017.09
-    ap-northeast-2:
+    ap-northeast-2: # Seoul
       "AMALINUX" : "ami-9bec36f5" # Amazon Linux AMI 2017.09
-    ap-northeast-1:
+    ap-northeast-1: # Tokyo
       "AMALINUX" : "ami-2a69be4c" # Amazon Linux AMI 2017.09
-    ap-south-1:
+    ap-south-1: # Mumbai
       "AMALINUX" : "ami-4fc58420" # Amazon Linux AMI 2017.09
-    sa-east-1:
+    sa-east-1: # Sao Paulo
       "AMALINUX" : "ami-f1344b9d" # Amazon Linux AMI 2017.09
+    eu-west-3: # Paris
+      "AMALINUX" : "ami-aad562d7" # Amazon Linux AMI 2017.10
 
 Resources:
   myVPC:
