@@ -249,10 +249,10 @@ Resources:
             yum:
               openvpn: []
           commands:
-            01_install_software_install_easyrsa:
-              command: "yum install easy-rsa -y --enablerepo=epel"
-            02_install_software_copy_easyrsa:
-              command: "cp -R /usr/share/easy-rsa/2.0 /opt/easy-rsa"
+              01_install_software_install_easyrsa:
+                command: wget -qO- https://github.com/OpenVPN/easy-rsa/releases/download/2.2.2/EasyRSA-2.2.2.tgz | tar xvz -C /opt/
+              02_install_software_copy_easyrsa:
+                command: cp -R /opt/EasyRSA-2.2.2 /opt/easy-rsa
         generate_secrets:
           commands:
             01_generate_secrets_clean_keysdir:
