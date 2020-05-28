@@ -1,8 +1,8 @@
-# openvpn_aws_cloudformation
+# ubuntu-openvpn-aws-cloudformation
 
-This is a CloudFormation template to deploy OpenVPN as a personal internet proxy. The template provides a fully automated setup and teardown with "one-click" into any AWS region. Each time you build a new stack, your endpoint will have a fresh IP, generate new secrets, and create a pre-configured ovpn profile that you can import into any OpenVPN client.
+This is a CloudFormation template to deploy an OpenVPN server running on Ubuntu 18.04. The template provides a fully automated setup and teardown with "one-click" into select US regions. Each time you build a new stack, your endpoint will have a fresh IP, generate new secrets, and create a pre-configured ovpn profile that you can import into any OpenVPN client.
 
-I've tested with the OpenVPN Connect client on Android, openvpn on Linux, and Tunnelblick on Mac.
+Tested with the OpenVPN Connect client on Android, openvpn on Linux, and Tunnelblick on Mac.
 
 Usage:
 
